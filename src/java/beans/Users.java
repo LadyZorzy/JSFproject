@@ -44,41 +44,49 @@ public class Users implements Serializable {
     @NotNull
     @Column(name = "USERS_ID")
     private Integer usersId;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "USERNAME")
     private String username;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "PASSWORD")
     private String password;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "IME")
     private String ime;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "PREZIME")
     private String prezime;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "ZEMLJA")
     private String zemlja;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "GRAD")
     private String grad;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "TIP")
     private String tip;
+
     @JoinColumn(name = "ROLE_ID", referencedColumnName = "ROLE_ID")
     @ManyToOne
     private Role roleId;
@@ -174,28 +182,8 @@ public class Users implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (usersId != null ? usersId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Users)) {
-            return false;
-        }
-        Users other = (Users) object;
-        if ((this.usersId == null && other.usersId != null) || (this.usersId != null && !this.usersId.equals(other.usersId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "beans.Users[ usersId=" + usersId + " ]";
     }
-    
+
 }
