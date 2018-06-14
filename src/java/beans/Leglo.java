@@ -42,18 +42,22 @@ public class Leglo implements Serializable {
     @NotNull
     @Column(name = "LEGLO_ID")
     private Integer legloId;
+
     @Column(name = "USERS_ID")
     private Integer usersId;
+
     @Basic(optional = false)
     @NotNull
     @Column(name = "DATUMSTENJENJA")
     @Temporal(TemporalType.DATE)
     private Date datumstenjenja;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "OTAC")
     private String otac;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
@@ -115,28 +119,8 @@ public class Leglo implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (legloId != null ? legloId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Leglo)) {
-            return false;
-        }
-        Leglo other = (Leglo) object;
-        if ((this.legloId == null && other.legloId != null) || (this.legloId != null && !this.legloId.equals(other.legloId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "beans.Leglo[ legloId=" + legloId + " ]";
     }
-    
+
 }
