@@ -48,43 +48,52 @@ public class Pas implements Serializable {
     @Size(min = 1, max = 10)
     @Column(name = "PAS_ID")
     private String pasId;
+
     @Column(name = "USERS_ID")
     private Integer usersId;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "IME")
     private String ime;
+
     @Basic(optional = false)
     @NotNull
     @Column(name = "DATUMSTENJENJA")
     @Temporal(TemporalType.DATE)
     private Date datumstenjenja;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
     @Column(name = "RASA")
     private String rasa;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
     @Column(name = "BROJ_MIKROCIPA")
     private String brojMikrocipa;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "MAJKA")
     private String majka;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "OTAC")
     private String otac;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
     @Column(name = "POTOMCI")
     private String potomci;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
@@ -191,28 +200,8 @@ public class Pas implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (pasId != null ? pasId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pas)) {
-            return false;
-        }
-        Pas other = (Pas) object;
-        if ((this.pasId == null && other.pasId != null) || (this.pasId != null && !this.pasId.equals(other.pasId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "beans.Pas[ pasId=" + pasId + " ]";
     }
-    
+
 }
